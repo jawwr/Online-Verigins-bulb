@@ -1,0 +1,10 @@
+version: "3"
+services:
+  bulb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bulb
+    ports:
+      - "1337:8081"
+    restart: on-failure
