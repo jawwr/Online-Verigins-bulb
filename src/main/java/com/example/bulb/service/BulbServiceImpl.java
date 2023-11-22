@@ -71,17 +71,11 @@ public class BulbServiceImpl implements BulbService {
 
     @Override
     public List<String> getColorNames() {
-        if (!BULB.isPowered()) {
-            throw new IllegalArgumentException("Bulb turned off");
-        }
         return Arrays.stream(BulbColor.values()).map(x -> x.colorName).toList();
     }
 
     @Override
     public List<BulbColorDto> getColors() {
-        if (!BULB.isPowered()) {
-            throw new IllegalArgumentException("Bulb turned off");
-        }
         return COLORS.values().stream().toList();
     }
 
